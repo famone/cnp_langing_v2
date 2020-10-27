@@ -27,6 +27,8 @@
 
 
 <script>
+import {mapState} from 'vuex'
+
 	export default{
 		methods: {
 			changeLesson(index){
@@ -39,34 +41,18 @@
 
 			}
 		},
+		mounted(){
+			this.$store.dispatch('smeta/getLessons')
+		},
 		computed:{
 			getVideoLink(){
 				return `https://player.vimeo.com/video/${this.activeLink}`
-			}
+			},
+			...mapState('smeta', ['lessons'])
 		},
 		data(){
 			return{
-				activeLink: '384333483',
-				lessons: [
-					{
-						name: 'Вводный урок',
-						time: '1:44',
-						video: '384333483',
-						active: true
-					},
-					{
-						name: 'Правильное использование ISO',
-						time: '4:13',
-						video: '459870455',
-						active: false
-					},
-					{
-						name: 'Руководство по выбору камеры и ее полной настройке',
-						time: '4:13',
-						video: '298837516',
-						active: false
-					}
-				]
+				activeLink: '459870455',
 			}
 		}
 	}

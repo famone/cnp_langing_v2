@@ -29,8 +29,7 @@ font-weight: 700;
 }
 #login{
 	height: calc(100vh - 122px);
-	display: flex;
-	align-items: center;
+	padding-top: 122px;
 }
 
 .myheader{
@@ -57,6 +56,29 @@ font-weight: 700;
 }
 .log-row p{
 	margin-right: 10px;
+}
+
+.shapka-btn{
+	margin: 0 5px;
+    display: block;
+    padding: 6px 20px;
+    background: #2E97E6;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.logout{
+	background-color: #262626;
+}
+.small-grey{
+	color: #808080;
+	font-size: 14px;
+}
+.sz-14{
+	font-size: 14px;
+	margin-bottom: 10px;
 }
 
 /*стили ленлинга*/
@@ -1191,17 +1213,6 @@ outline-width: 0;
 
 .minivid{
 	width: 94%!important;
-}
-.shapka-btn{
-	margin: 0;
-    display: block;
-    padding: 8px 30px;
-    background: #2E97E6;
-    border-radius: 5px;
-    font-size: 14px;
-    line-height: 24px;
-    font-weight: 600;
-    cursor: pointer;
 }
 
 

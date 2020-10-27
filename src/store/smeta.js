@@ -5,7 +5,9 @@ const smeta = {
 	namespaced: true,
 	state: {
 		user: null,
-		token: null
+		token: null,
+        lessons: [],
+        snack: false
   	},
 	mutations: {
 		SET_TOKEN(state, token) {
@@ -15,15 +17,35 @@ const smeta = {
         SET_USER(state, user) {
             state.user = user;
         },
+        SET_LESSONS(state, lessons){
+            state.lessons = lessons
+        },
+        SNACKBAR(state){
+            state.snack = !state.snack
+
+            setTimeout(function(){
+                state.snack = false;
+            }, 5000);
+        }
 	},
 	actions: {
+        async getLessons({commit}){
+            try {
+                const { data } = await axios.get(`https://nikitapugachev.ru/wp-json/np/v1/get/videos`)
+                console.log(data)
+                return commit('SET_LESSONS', data)
+            }
+            catch (err) {
+                commit('SNACKBAR')
+            }
+        },
 		 async AUTH_REQUEST({ commit, dispatch }, payload) {
             try {
                 const { data } = await axios.post(`https://nikitapugachev.ru/wp-json/jwt-auth/v1/token`, payload)
                 return dispatch('VALIDATE', data)
             }
             catch (err) {
-            	alert('Тута ошибочка')
+            	commit('SNACKBAR')
             }
         },
         async VALIDATE({ commit, state }, user) {

@@ -8,28 +8,32 @@
 
 		<div class="col-lg-12 text-center">
 			<svg data-v-850e14e4="" width="133" height="70" viewBox="0 0 133 70" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon"><path data-v-850e14e4="" fill-rule="evenodd" clip-rule="evenodd" d="M79.5382 35.0015H114.026V17.5007H87.2678L68.6075 0H132.687V52.5022H90.469V70L34.4911 17.5007H18.6603V52.5022H45.425L64.0822 70H0V0H42.2176L79.5382 35.0015Z" fill="#EDEDED"></path></svg>
-			<h3>Авторизация</h3>
+			<h3>Регистрация</h3>
 			<form @submit.prevent="login()" class="text-center">
 				<div class="form-box">
 					<input type="text" :class="{errorInp : $v.name.$dirty && !$v.name.required}"
 					 v-model="name" placeholder="Логин">
 				</div>
 				<div class="form-box">
-					<input type="password" :class="{errorInp : $v.pass.$dirty && !$v.pass.required}"
-					v-model="pass" placeholder="Пароль">
-					<router-link tag="a" to="/" class="blue-text sz-14">Забыли пароль?</router-link>
+					<input type="password" :class="{errorInp : $v.pass1.$dirty && !$v.pass1.required}"
+					v-model="pass1" placeholder="Пароль">
+				</div>
+				<div class="form-box">
+					<input type="password" :class="{errorInp : $v.pass1.$dirty && !$v.pass1.required || pass1 !== pass2}"
+					v-model="pass2" placeholder="Подтверждение пароля">
 				</div>
 					<button class="blue-btn">
 						<loading v-if="loadingLog" /> 
 						<span v-else>Войти</span>
 					</button>
-				<p class="small-grey">У тебя еще нет аккаунта?</p>
-				<router-link tag="a" to="/signup" class="blue-text sz-14">Зарегистрируйся</router-link>
+				<p class="small-grey">Уже есть аккаунт?</p>
+				<router-link tag="a" to="/login" class="blue-text sz-14">Авторизируйся</router-link>
 
 			</form>
 		</div>
 	</section>
 </template>
+
 
 <script>
 import snackbar from '../components/snackbar.vue'
@@ -42,12 +46,16 @@ export default{
 	data(){
 		return{
 			name: '',
-			pass: '',
-			loadingLog: false
+			pass1: '',
+			pass2: '',
+			loadingLog: false,
 		}
 	},
 	validations: {
-		pass: {
+		pass1: {
+			required
+		},
+		pass2: {
 			required
 		},	
 		name: {
@@ -70,8 +78,18 @@ export default{
 			this.loadingLog = true
 			let form = {
 	        	username: this.name,
-	        	password: this.pass,
+	        	password: this.pass1,
 	     	}
+
+	     	if(this.pass1 !== this.pass2){
+	     		this.loadingLog = false
+	     		return
+	     	}
+
+	     	console.log(form)
+
+
+	     	return
 
 	     	this.AUTH_REQUEST(form).then(() => {
 	     		this.loadingLog = false
@@ -114,9 +132,6 @@ input{
     border:2px #fff solid;
     transition: all .2s ease;
 }
-input[type="password"]{
-	margin-bottom: 5px;
-}
 .blue-btn{
 	font-size: 16px;
 	color: #fff;
@@ -127,7 +142,6 @@ input[type="password"]{
 	border:none;
 	transition: all .3s ease;
 	margin-bottom: 20px;
-	margin-top: 15px;
 }
 .blue-btn{
 	width: 100%;

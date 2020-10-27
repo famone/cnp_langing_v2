@@ -11,7 +11,10 @@
 	            		Войти
 	            	</router-link>
 	            	<p class="white-txt" v-if="user !== null">Привет, {{ user.user_display_name }}</p>
-	            	<button class="shapka-btn" 
+	            	<router-link to="/course" tag="button" class="shapka-btn" v-if="user !== null">
+	            		🔥 Личный кабинет
+	            	</router-link>
+	            	<button class="shapka-btn logout" 
 	            	v-if="user !== null"
 	            	@click="logout">
 	            		Выйти

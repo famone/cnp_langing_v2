@@ -3,6 +3,7 @@ import Home from '../pages/Home.vue'
 import store from '../store'
 import Course from '../pages/Course.vue'
 import Login from '../pages/Login.vue'
+import Signup from '../pages/Signup.vue'
 
 
 const routes = [
@@ -29,6 +30,10 @@ const routes = [
 		{
 			path: '/login',
 			component: Login,
+		},
+		{
+			path: '/signup',
+			component: Signup,
 		},
 
 	]

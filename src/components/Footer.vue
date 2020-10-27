@@ -27,7 +27,52 @@
         <a target="_blank" href="#">Пользовательское соглашение</a>
         <a target="_blank" href="#">Безопасность платежей</a>
       </div>
+      <div class="webink">
+          <a target="_blank" href="https://webink.site/">Developed in Webink.</a>
+        </div>
     </div>
   </div>
 </footer>
 </template>
+
+
+<style>
+  .webink{
+    margin: 0 auto;
+  }
+  .webink a{
+    color: #2E97E6!important;
+    opacity: 1!important;
+  }
+  .webink:hover {
+    animation: 1s myshake alternate;
+  }
+  @keyframes myshake{
+    0% {
+    transform: skewX(-15deg);
+    }
+    5% {
+        transform: skewX(15deg);
+    }
+    10% {
+        transform: skewX(-15deg);
+    }
+    15% {
+        transform: skewX(15deg);
+    }
+    20% {
+        transform: skewX(0deg);
+    }
+    100% {
+        transform: skewX(0deg);
+    }
+  }
+
+
+@media (max-width:991px) {
+  .webink{
+    margin:0;
+    margin-top: 25px;
+  }
+}
+</style>
