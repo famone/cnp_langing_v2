@@ -2,7 +2,7 @@
 	<section id="login" class="container">
 		
 		<transition name="slide" mode="out-in">
-			<snackbar v-if="snack"/>
+			<enter v-if="enterAlert"/>
 		</transition>
 
 
@@ -12,7 +12,7 @@
 			<form @submit.prevent="login()" class="text-center">
 				<div class="form-box">
 					<input type="text" :class="{errorInp : $v.name.$dirty && !$v.name.required}"
-					 v-model="name" placeholder="Логин">
+					 v-model="name" placeholder="Почта">
 				</div>
 				<div class="form-box">
 					<input type="password" :class="{errorInp : $v.pass1.$dirty && !$v.pass1.required}"
@@ -36,13 +36,13 @@
 
 
 <script>
-import snackbar from '../components/snackbar.vue'
+import enter from '../components/enter.vue'
 import {mapActions, mapState} from 'vuex'
 import loading from '../components/loading.vue'
 import { required } from "vuelidate/lib/validators";
 
 export default{
-	components: {loading, snackbar},
+	components: {loading, enter},
 	data(){
 		return{
 			name: '',
@@ -63,11 +63,11 @@ export default{
 		}
 	},
 	computed: {
-		...mapState('smeta', ['snack'])
+		...mapState('signup', ['enterAlert'])
 	},
 	methods: {
 		...mapActions({
-	      AUTH_REQUEST: "smeta/AUTH_REQUEST",
+	      SIGN_UP: "signup/SIGN_UP",
 	    }),
 		login(){
 			if(this.$v.$invalid) {
@@ -86,19 +86,24 @@ export default{
 	     		return
 	     	}
 
-	     	console.log(form)
 
 
-	     	return
-
-	     	this.AUTH_REQUEST(form).then(() => {
+	     	this.SIGN_UP(form).then(() => {
 	     		this.loadingLog = false
-		        this.$router.replace("/course");
+		        this.$router.replace("/");
 		      });
 	    }
 	}
 }
 </script>
+
+
+
+
+
+
+
+
 
 <style scoped>
 h3{
