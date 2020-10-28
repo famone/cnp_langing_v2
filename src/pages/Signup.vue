@@ -24,7 +24,7 @@
 				</div>
 					<button class="blue-btn">
 						<loading v-if="loadingLog" /> 
-						<span v-else>Войти</span>
+						<span v-else>Зарегистрироваться</span>
 					</button>
 				<p class="small-grey">Уже есть аккаунт?</p>
 				<router-link tag="a" to="/login" class="blue-text sz-14">Авторизируйся</router-link>

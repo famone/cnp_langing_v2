@@ -4,6 +4,7 @@ import store from '../store'
 import Course from '../pages/Course.vue'
 import Login from '../pages/Login.vue'
 import Signup from '../pages/Signup.vue'
+import Recovery from '../pages/Recovery.vue'
 
 
 const routes = [
@@ -34,6 +35,10 @@ const routes = [
 		{
 			path: '/signup',
 			component: Signup,
+		},
+		{
+			path: '/recovery',
+			component: Recovery,
 		},
 
 	]

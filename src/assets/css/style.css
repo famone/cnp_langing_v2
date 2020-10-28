@@ -1215,6 +1215,12 @@ outline-width: 0;
 	width: 94%!important;
 }
 
+@media (max-width: 512px) {
+	.shapka button{
+		padding:6px 10px;
+	}
+}
+
 
 
 

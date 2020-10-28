@@ -110,5 +110,8 @@ import {mapState} from 'vuex'
 	.lesson-btn p{
 		font-size: 14px;
 	}
+	#coursepage{
+		padding:30px 0;
+	}
 }
 </style>

@@ -10,7 +10,7 @@
 	            	<router-link to="/course" tag="button" class="shapka-btn" v-if="!user">
 	            		Войти
 	            	</router-link>
-	            	<p class="white-txt" v-if="user !== null">Привет, {{ user.user_display_name }}</p>
+	            	<p class="white-txt hidden-xs" v-if="user !== null">{{ user.user_email }}</p>
 	            	<router-link to="/course" tag="button" class="shapka-btn" v-if="user !== null">
 	            		🔥 Личный кабинет
 	            	</router-link>
