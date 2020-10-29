@@ -32,7 +32,7 @@
 	            <div class="log-row" v-else>
 	            	<p class="white-txt hidden-xs">{{ user.user_email }}</p>
 <!--  -->
-	            	
+	            	<p>.</p>
 	            	<div class="no-acces" v-if="!acces">
 	            		<span class="mdi mdi-eye-off-outline" style="color: #f44336;"></span> 
 	            		Нет подписки
