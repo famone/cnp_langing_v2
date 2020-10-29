@@ -12,10 +12,10 @@
 	            	</router-link>
 	            	<p class="white-txt hidden-xs" v-if="user !== null">{{ user.user_email }}</p>
 	            	<router-link to="/course" tag="button" class="shapka-btn" 
-	            	v-if="user !== null && acces ">
+	            	v-if="user !== null && acces">
 	            		🔥 Личный кабинет
 	            	</router-link>
-	            	<div class="no-acces" v-if="user !== null && user.roles.toString() === 'contributor'">
+	            	<div class="no-acces" v-if="user !== null && !acces ">
 	            		<span class="mdi mdi-eye-off-outline" style="color: #f44336;"> </span> Нет подписки
 	            	</div>
 	            	<button class="shapka-btn logout" 

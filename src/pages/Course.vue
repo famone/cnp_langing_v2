@@ -1,7 +1,7 @@
 <template>
 	<section id="coursepage">
 		<div class="container wide-container">
-			<div class="row">
+			<div class="sad">
 				<div class="col-lg-8 col-md-8">
 				<iframe :src="getVideoLink" width="100%" webkitallowfullscreen frameborder="0" allow="autoplay; fullscreen" allowfullscreen="allowfullscreen" id="videplayer"></iframe>
 			</div>
@@ -64,6 +64,10 @@ import {mapState} from 'vuex'
 	padding: 40px 0;
 	min-height: calc(100vh - 123px);
 }
+#coursepage .sad .col-lg-8{
+	padding-left: 0;
+	padding-right: 0;
+}
 .learn__item-descr{
 	margin: 10px 0;
 }
@@ -86,7 +90,7 @@ import {mapState} from 'vuex'
 	font-weight: 600;
 }
 #videplayer{
-	width: calc(100% + -20px);
+	width: calc(100% - 20px);
 	min-height: 500px;
 }
 .lesson-title{
