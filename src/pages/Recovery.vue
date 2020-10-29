@@ -50,7 +50,7 @@ export default{
 	},
 	methods: {
 		...mapActions({
-	      AUTH_REQUEST: "smeta/AUTH_REQUEST",
+	      REMEMBER_PASS: "forgot/REMEMBER_PASS",
 	    }),
 		login(){
 			if(this.$v.$invalid) {
@@ -59,14 +59,17 @@ export default{
 			}
 
 			this.loadingLog = true
-			
-	        	email: this.email
-	     	
-	     	return
 
-	     	this.AUTH_REQUEST(form).then(() => {
+			
+				let email = this.email
+			
+
+	     	
+	 
+
+	     	this.REMEMBER_PASS(email).then(() => {
 	     		this.loadingLog = false
-		        this.$router.replace("/course");
+		        // this.$router.replace("/course");
 		      });
 	    }
 	}

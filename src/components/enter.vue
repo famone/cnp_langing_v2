@@ -48,4 +48,10 @@
 		background-color: #f4433642;
 		border-color: transparent;
 	}
+	
+	@media (max-width: 768px) {
+		.enter{
+			top: 22%!important;
+		}
+	}
 </style>

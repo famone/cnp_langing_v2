@@ -86,7 +86,7 @@ import {mapState} from 'vuex'
 	font-weight: 600;
 }
 #videplayer{
-	width: 100%;
+	width: calc(100% + -20px);
 	min-height: 500px;
 }
 .lesson-title{
@@ -98,6 +98,34 @@ import {mapState} from 'vuex'
 }
 .wide-container {
     max-width: 1410px;
+}
+
+
+
+
+@media (max-width: 1025px) {
+	#coursepage{
+		padding: 0;
+	}
+	#videplayer{
+		width: 100%;
+		min-height: 550px;
+	}
+}
+@media (max-width: 786px) {
+	#coursepage{
+		padding: 0;
+	}
+	#videplayer{
+		width: 100%;
+		min-height: 415px;
+	}
+}
+@media (max-width: 767px) {
+ 	
+}
+@media (max-width: 672px) {
+	
 }
 @media (max-width: 512px) {
 	#videplayer{
@@ -111,7 +139,13 @@ import {mapState} from 'vuex'
 		font-size: 14px;
 	}
 	#coursepage{
-		padding:30px 0;
+		padding: 0;
 	}
+}
+@media (max-width: 390px) {
+	
+}
+@media (max-width: 320px) {
+
 }
 </style>

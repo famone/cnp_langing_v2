@@ -44,10 +44,20 @@ font-weight: 700;
 	z-index: 100;
 }
 .shapka{
-	padding: 10px 0;
+	padding: 10px 10px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+@media (max-width: 786px) {
+	.shapka{
+		padding: 10px 0;
+	}
+}
+@media (max-width: 512px) {
+	.shapka{
+		padding: 10px 0;
+	}
 }
 .log-row{
 	display: flex;
