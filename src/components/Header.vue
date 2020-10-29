@@ -6,7 +6,7 @@
 	            	<img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/Logo.svg">
 	            </router-link>
 
-	            <div class="log-row">
+	           <!--  <div class="log-row">
 	            	<router-link to="/enter" tag="button" class="shapka-btn" v-if="!user">
 	            		Войти
 	            	</router-link>
@@ -23,6 +23,25 @@
 	            	@click="logout">
 	            		Выйти
 	            	</button>
+	            </div> -->
+	            <div class="log-row" v-if="!user">
+	            	<router-link to="/enter" tag="button" class="shapka-btn">
+	            		Войти
+	            	</router-link>
+	            </div>
+	            <div class="log-row" v-else>
+	            	<p class="white-txt hidden-xs">{{ user.user_email }}</p>
+<!--  -->
+	            	
+	            	<div class="no-acces" v-if="!acces">
+	            		<span class="mdi mdi-eye-off-outline" style="color: #f44336;"></span> 
+	            		Нет подписки
+	            	</div>
+	            	<router-link to="/course" tag="button" class="shapka-btn" v-else>
+	            		🔥 Личный кабинет
+	            	</router-link>
+<!--  -->
+	            	<button class="shapka-btn logout"@click="logout">Выйти</button>
 	            </div>
 	            
             </div>
