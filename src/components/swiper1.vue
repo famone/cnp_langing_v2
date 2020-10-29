@@ -23,7 +23,7 @@ export default{
     data(){
         return{
             swiperOptions: {
-                    slidesPerView: 1,
+                  slidesPerView: 1,
                   spaceBetween: 0,
                   draggable: true,
                   loop: true,    

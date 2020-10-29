@@ -17,19 +17,21 @@
 					 v-model="name" placeholder="Почта">
 				</div>
 				<div class="form-box">
-					<input type="password" :class="{errorInp : $v.pass1.$dirty && !$v.pass1.required}"
+					<input type="password"
+	:class="{errorInp : ($v.pass1.$dirty && !$v.pass1.required) || ($v.pass1.$dirty && !$v.pass1.minLength)}"
 					v-model="pass1" placeholder="Пароль">
 				</div>
 				<div class="form-box">
 					<input type="password" :class="{errorInp : $v.pass1.$dirty && !$v.pass1.required || pass1 !== pass2}"
 					v-model="pass2" placeholder="Подтверждение пароля">
 				</div>
+				<password v-model="pass1" :strength-meter-only="true" />
 					<button class="blue-btn">
 						<loading v-if="loadingLog" /> 
 						<span v-else>Зарегистрироваться</span>
 					</button>
 				<p class="small-grey">Уже есть аккаунт?</p>
-				<router-link tag="a" to="/login" class="blue-text sz-14">Авторизируйся</router-link>
+				<router-link tag="a" to="/enter" class="blue-text sz-14">Авторизируйся</router-link>
 
 			</form>
 		</div>
@@ -38,13 +40,14 @@
 
 
 <script>
+import Password from 'vue-password-strength-meter'
 import enter from '../components/enter.vue'
 import {mapActions, mapState, mapGetters} from 'vuex'
 import loading from '../components/loading.vue'
-import { required, email } from "vuelidate/lib/validators";
+import { required, email, minLength } from "vuelidate/lib/validators";
 
 export default{
-	components: {loading, enter},
+	components: {loading, enter, Password},
 	data(){
 		return{
 			name: '',
@@ -55,7 +58,8 @@ export default{
 	},
 	validations: {
 		pass1: {
-			required
+			required,
+			minLength: minLength(7)
 		},
 		pass2: {
 			required
@@ -95,7 +99,7 @@ export default{
 	     	this.SIGN_UP(form).then(() => {
 	     		this.loadingLog = false
 	     		if(!this.getNew){
-	     			this.$router.replace("/login");
+	     			this.$router.replace("/enter");
 	     			return
 	     		}
 	     		
@@ -169,4 +173,5 @@ input{
 .errorInp{
 	border:2px #f44336 solid!important;
 }
+
 </style>

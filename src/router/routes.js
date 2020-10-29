@@ -8,6 +8,7 @@ import Recovery from '../pages/Recovery.vue'
 import Politika from '../pages/Politika.vue'
 import Soglashenie from '../pages/Soglashenie.vue'
 import Platezhi from '../pages/Platezhi.vue'
+import Subscribe from '../pages/Subscribe.vue'
 
 
 const routes = [
@@ -19,15 +20,17 @@ const routes = [
 			path: '/course',
 			component: Course,
 			beforeEnter: (to, from, next) => {
-				if(!store.getters["smeta/getAuthenticated"] || !store.getters["smeta/checkAcces"]){
-					next("/login")
-					 return
-				}else{
+				
+
 					if(store.getters["smeta/getAuthenticated"]){
-		        		next()
+		        		if(!store.getters["smeta/checkAcces"]){
+		        			next("/subscribe")
+		        		}else{
+		        			next()
+		        		}
 			        }else {
-				        if (to.path != "/login") {
-				            next("/login")
+				        if (to.path != "/enter") {
+				            next("/enter")
 				        }
 				        else {
 				            next()
@@ -35,11 +38,9 @@ const routes = [
 				    }
 				}
 
-		        
-		    }
 		},
 		{
-			path: '/login',
+			path: '/enter',
 			component: Login,
 		},
 		{
@@ -61,6 +62,10 @@ const routes = [
 		{
 			path: '/platezhi',
 			component: Platezhi,
+		},
+		{
+			path: '/subscribe',
+			component: Subscribe,
 		},
 
 	]

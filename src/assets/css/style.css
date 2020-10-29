@@ -1264,3 +1264,13 @@ a:focus{
 	text-decoration: none;
 }
 
+
+
+
+.Password__strength-meter{
+	margin: 0px auto 20px!important;
+	background: #1b1b1b!important;
+}
+.Password__strength-meter:after, .Password__strength-meter:before{
+	border-color: #121212!important;
+}

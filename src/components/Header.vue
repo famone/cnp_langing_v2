@@ -7,10 +7,10 @@
 	            </router-link>
 
 	            <div class="log-row">
-	            	<router-link to="/login" tag="button" class="shapka-btn" v-if="!user">
+	            	<router-link to="/enter" tag="button" class="shapka-btn" v-if="!user">
 	            		Войти
 	            	</router-link>
-	            	<p class="white-txt hidden-xs" v-if="user !== null">{{ user.user_nicename }}</p>
+	            	<p class="white-txt hidden-xs" v-if="user !== null">{{ user.user_email }}</p>
 	            	<router-link to="/course" tag="button" class="shapka-btn" 
 	            	v-if="user !== null && user.roles.toString() !== 'contributor' ">
 	            		🔥 Личный кабинет
@@ -44,7 +44,7 @@ import {mapGetters, mapActions} from 'vuex'
 
 	    	logout() {
 	      		this.singOut().then(() => {
-	        		this.$router.replace("/login");
+	        		this.$router.replace("/enter");
 	      		});
 	    	}
   		},
