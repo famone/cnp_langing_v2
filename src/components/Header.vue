@@ -12,7 +12,7 @@
 	            	</router-link>
 	            	<p class="white-txt hidden-xs" v-if="user !== null">{{ user.user_email }}</p>
 	            	<router-link to="/course" tag="button" class="shapka-btn" 
-	            	v-if="user !== null && user.roles.toString() !== 'contributor' ">
+	            	v-if="user !== null && acces ">
 	            		🔥 Личный кабинет
 	            	</router-link>
 	            	<div class="no-acces" v-if="user !== null && user.roles.toString() === 'contributor'">
@@ -35,7 +35,7 @@
 import {mapGetters, mapActions} from 'vuex'
 	export default{
 		computed: {
-			...mapGetters({ user: "smeta/getUser" }),
+			...mapGetters({ user: "smeta/getUser", acces: "smeta/checkAcces" }),
 		},
 		methods: {
     		...mapActions({
