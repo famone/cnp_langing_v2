@@ -74,7 +74,9 @@ export default{
 	     	}
 
 	     	this.AUTH_REQUEST(form).then(() => {
-	     		this.loadingLog = false
+	     		this.loadingLog = false;
+	     		this.name = '';
+	     		this.pass = '';
 		        this.$router.replace("/course");
 		      });
 	    }

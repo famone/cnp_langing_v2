@@ -16,7 +16,7 @@
 	            		🔥 Личный кабинет
 	            	</router-link>
 	            	<div class="no-acces" v-if="user !== null && user.roles.toString() === 'contributor'">
-	            		<span class="mdi mdi-eye-off-outline" style="color: #f44336;"> </span> У вас еще нет подписки
+	            		<span class="mdi mdi-eye-off-outline" style="color: #f44336;"> </span> Нет подписки
 	            	</div>
 	            	<button class="shapka-btn logout" 
 	            	v-if="user !== null"

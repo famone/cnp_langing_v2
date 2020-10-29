@@ -20,7 +20,7 @@ const routes = [
 			component: Course,
 			beforeEnter: (to, from, next) => {
 				if(!store.getters["smeta/getAuthenticated"] || !store.getters["smeta/checkAcces"]){
-					 next("/")
+					next("/login")
 					 return
 				}else{
 					if(store.getters["smeta/getAuthenticated"]){
