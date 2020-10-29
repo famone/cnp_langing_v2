@@ -2,10 +2,10 @@
 	<section id="coursepage">
 		<div class="container wide-container">
 			<div class="row">
-				<div class="col-lg-8">
+				<div class="col-lg-8 col-md-8">
 				<iframe :src="getVideoLink" width="100%" webkitallowfullscreen frameborder="0" allow="autoplay; fullscreen" allowfullscreen="allowfullscreen" id="videplayer"></iframe>
 			</div>
-			<div class="col-lg-4">
+			<div class="col-lg-4 col-md-4">
 				<h3>Бюджетная фуд-съемка для начинающих</h3>
 				<div class="learn__item-descr">12 Уроков • 1 час 48 мин</div>
 				<div class="lesson-btn" 
