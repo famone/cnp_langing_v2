@@ -9,7 +9,7 @@
 	export default{
 		methods: {
 			closeSnack(){
-				this.$store.commit('smeta/SNACKBAR')
+				this.$store.commit('signup/ALERT_NO')
 			}
 		}
 	}

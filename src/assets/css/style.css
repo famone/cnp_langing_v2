@@ -80,7 +80,24 @@ font-weight: 700;
 	font-size: 14px;
 	margin-bottom: 10px;
 }
-
+#typical{
+	padding:50px 0;
+	min-height: calc(100vh - 123px);
+}
+#typical h2{
+	margin-bottom: 30px;
+}
+.no-acces{
+	background-color: #262626;
+	margin: 0 5px;
+    display: block;
+    padding: 6px 20px;
+    cursor: not-allowed;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+}
 /*стили ленлинга*/
 
 *{

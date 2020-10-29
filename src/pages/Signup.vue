@@ -6,12 +6,14 @@
 		</transition>
 
 
+
 		<div class="col-lg-12 text-center">
 			<svg data-v-850e14e4="" width="133" height="70" viewBox="0 0 133 70" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon"><path data-v-850e14e4="" fill-rule="evenodd" clip-rule="evenodd" d="M79.5382 35.0015H114.026V17.5007H87.2678L68.6075 0H132.687V52.5022H90.469V70L34.4911 17.5007H18.6603V52.5022H45.425L64.0822 70H0V0H42.2176L79.5382 35.0015Z" fill="#EDEDED"></path></svg>
 			<h3>Регистрация</h3>
 			<form @submit.prevent="login()" class="text-center">
 				<div class="form-box">
-					<input type="text" :class="{errorInp : $v.name.$dirty && !$v.name.required}"
+					<input type="text" 
+		:class="{errorInp : ($v.name.$dirty && !$v.name.required) || ($v.name.$dirty && !$v.name.email)}"
 					 v-model="name" placeholder="Почта">
 				</div>
 				<div class="form-box">
@@ -37,9 +39,9 @@
 
 <script>
 import enter from '../components/enter.vue'
-import {mapActions, mapState} from 'vuex'
+import {mapActions, mapState, mapGetters} from 'vuex'
 import loading from '../components/loading.vue'
-import { required } from "vuelidate/lib/validators";
+import { required, email } from "vuelidate/lib/validators";
 
 export default{
 	components: {loading, enter},
@@ -59,11 +61,13 @@ export default{
 			required
 		},	
 		name: {
-			required
+			required, 
+			email
 		}
 	},
 	computed: {
-		...mapState('signup', ['enterAlert'])
+		...mapState('signup', ['enterAlert']),
+		...mapGetters('signup', ['getNew'])
 	},
 	methods: {
 		...mapActions({
@@ -90,7 +94,18 @@ export default{
 
 	     	this.SIGN_UP(form).then(() => {
 	     		this.loadingLog = false
-		        this.$router.replace("/");
+	     		if(!this.getNew){
+	     			this.$router.replace("/login");
+	     			return
+	     		}
+	     		
+	     		// alert(this.getNew )
+	     		// if(!this.getNew){
+	     		// 	alert('такой есть')
+	     		// }else{
+	     		// 	alert('получилось')
+	     		// }
+
 		      });
 	    }
 	}

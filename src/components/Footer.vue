@@ -23,9 +23,15 @@
         </a>
       </div>
       <div class="footer__documents">
-        <a target="_blank" href="#">Политика конфиденциальности</a>
-        <a target="_blank" href="#">Пользовательское соглашение</a>
-        <a target="_blank" href="#">Безопасность платежей</a>
+        <router-link to="/politika" tag="a">
+          Политика конфиденциальности
+        </router-link>
+        <router-link to="/soglashenie" tag="a">
+          Пользовательское соглашение
+        </router-link>
+        <router-link to="/platezhi" tag="a">
+          Безопасность платежей
+        </router-link>
       </div>
       <div class="webink">
           <a target="_blank" href="https://webink.site/">Developed in Webink.</a>

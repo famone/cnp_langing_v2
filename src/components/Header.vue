@@ -7,13 +7,17 @@
 	            </router-link>
 
 	            <div class="log-row">
-	            	<router-link to="/course" tag="button" class="shapka-btn" v-if="!user">
+	            	<router-link to="/login" tag="button" class="shapka-btn" v-if="!user">
 	            		Войти
 	            	</router-link>
-	            	<p class="white-txt hidden-xs" v-if="user !== null">{{ user.user_email }}</p>
-	            	<router-link to="/course" tag="button" class="shapka-btn" v-if="user !== null">
+	            	<p class="white-txt hidden-xs" v-if="user !== null">{{ user.user_nicename }}</p>
+	            	<router-link to="/course" tag="button" class="shapka-btn" 
+	            	v-if="user !== null && user.roles.toString() !== 'contributor' ">
 	            		🔥 Личный кабинет
 	            	</router-link>
+	            	<div class="no-acces" v-if="user !== null && user.roles.toString() === 'contributor'">
+	            		<span class="mdi mdi-eye-off-outline" style="color: #f44336;"> </span> У вас еще нет подписки
+	            	</div>
 	            	<button class="shapka-btn logout" 
 	            	v-if="user !== null"
 	            	@click="logout">

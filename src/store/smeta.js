@@ -13,7 +13,6 @@ const smeta = {
 		SET_TOKEN(state, token) {
             state.token = token;
         },
-
         SET_USER(state, user) {
             state.user = user;
         },
@@ -32,7 +31,6 @@ const smeta = {
         async getLessons({commit}){
             try {
                 const { data } = await axios.get(`https://nikitapugachev.ru/wp-json/np/v1/get/videos`)
-                console.log(data)
                 return commit('SET_LESSONS', data)
             }
             catch (err) {
@@ -89,6 +87,15 @@ const smeta = {
         },
         getAuthenticated(state) {
             return state.token && state.user
+        },
+        checkAcces(state){
+            let result = state.user.roles.toString()
+            if(result === 'contributor'){
+                return false
+            }else{
+                return true
+            }
+            
         }
 	}
 }
