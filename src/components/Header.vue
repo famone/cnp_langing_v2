@@ -8,7 +8,7 @@
 
 	            <div class="log-row" v-if="user === null">
 	            	<router-link to="/enter" tag="button" class="shapka-btn">
-	            		Войти
+	            		{{voiti}}
 	            	</router-link>
 	            </div>
 <!--  -->
@@ -17,9 +17,9 @@
 
 	            	<div class="no-acces">
 	            		<span class="mdi mdi-eye-off-outline" style="color: #f44336;"></span> 
-	            		Нет подписки
+	            		{{noAccess}}
 	            	</div>
-	            	<button class="shapka-btn logout"@click="logout">Выйти</button>
+	            	<button class="shapka-btn logout"@click="logout">{{exit}}</button>
 	            </div>
 
 <!--  -->
@@ -28,9 +28,9 @@
 			<div class="log-row" v-else>
 	            	<p class="white-txt hidden-xs">{{ user.user_email }}</p>
 	            	<router-link to="/course" tag="button" class="kabinet">
-	            		🔥 Личный кабинет
+	            		{{kabinet}}
 	            	</router-link>
-	            	<button class="shapka-btn logout"@click="logout">Выйти</button>
+	            	<button class="shapka-btn logout"@click="logout">{{exit}}</button>
 	            </div>
 
 
@@ -45,6 +45,14 @@
 <script>
 import {mapGetters, mapActions} from 'vuex'
 	export default{
+		data(){
+			return{
+				voiti: 'Войти',
+				kabinet: '🔥 Личный кабинет',
+				exit: 'Выйти',
+				noAccess: 'Нет подписки'
+			}
+		},
 		computed: {
 			...mapGetters({ user: "smeta/getUser", acces: "smeta/checkAcces" }),
 		},

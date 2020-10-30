@@ -244,7 +244,7 @@ animation-duration: 2.5s;
 }
 /* Header style*/
 .header{
-height: 836px;
+height: 100vh;
 margin: 0 auto;
 margin-bottom: 300px;
 position: relative;
