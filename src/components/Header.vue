@@ -3,7 +3,7 @@
 		<div class="container-fluid">
             <div class="shapka">
             	<router-link to="/" tag="a" class="header__logo wow">
-	            	<img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/Logo.svg">
+	            	<img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/Logo.svg">
 	            </router-link>
 
 	            <div class="log-row" v-if="user === null">
@@ -27,7 +27,7 @@
 
 			<div class="log-row" v-else>
 	            	<p class="white-txt hidden-xs">{{ user.user_email }}</p>
-	            	<router-link to="/course" tag="button" class="shapka-btn">
+	            	<router-link to="/course" tag="button" class="kabinet">
 	            		🔥 Личный кабинет
 	            	</router-link>
 	            	<button class="shapka-btn logout"@click="logout">Выйти</button>
@@ -63,25 +63,20 @@ import {mapGetters, mapActions} from 'vuex'
 </script>
 
 
+<style>
+	.kabinet{
+		margin: 0 5px;
+	    display: block;
+	    padding: 6px 20px;
+	    background: #2E97E6;
+	    border-radius: 5px;
+	    font-size: 14px;
+	    line-height: 24px;
+	    font-weight: 600;
+	    cursor: pointer;
+	}
+</style>	
 
 
- <!--  <div class="log-row">
-	            	<router-link to="/enter" tag="button" class="shapka-btn" v-if="!user">
-	            		Войти
-	            	</router-link>
-	            	<p class="white-txt hidden-xs" v-if="user !== null">{{ user.user_email }}</p>
-	            	<router-link to="/course" tag="button" class="shapka-btn" 
-	            	v-if="user !== null && acces">
-	            		🔥 Личный кабинет
-	            	</router-link>
-	            	<div class="no-acces" v-if="user !== null && !acces ">
-	            		<span class="mdi mdi-eye-off-outline" style="color: #f44336;"> </span> Нет подписки
-	            	</div>
-	            	<button class="shapka-btn logout" 
-	            	v-if="user !== null"
-	            	@click="logout">
-	            		Выйти
-	            	</button>
-	            </div> -->
 
 
