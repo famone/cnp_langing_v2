@@ -28,6 +28,7 @@
 			<div class="log-row" v-else>
 	            	<p class="white-txt hidden-xs">{{ user.user_email }}</p>
 	            	<router-link to="/course" tag="button" class="kabinet">
+	            		<span class="mdi mdi-account-outline"></span>
 	            		{{kabinet}}
 	            	</router-link>
 	            	<button class="shapka-btn logout"@click="logout">{{exit}}</button>
@@ -48,7 +49,7 @@ import {mapGetters, mapActions} from 'vuex'
 		data(){
 			return{
 				voiti: 'Войти',
-				kabinet: '🔥 Личный кабинет',
+				kabinet: 'Личный кабинет',
 				exit: 'Выйти',
 				noAccess: 'Нет подписки'
 			}
