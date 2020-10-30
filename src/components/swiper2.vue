@@ -26,9 +26,9 @@ export default{
                   speed: 1000,
             },
             images: [
-                'https://nikitapugachev.ru/wp-content/themes/np/assets/img/second-slider__img1-min.jpg',
-                'https://nikitapugachev.ru/wp-content/themes/np/assets/img/second-slider__img2-min.jpg',
-                'https://nikitapugachev.ru/wp-content/themes/np/assets/img/second-slider__img3-min.jpg'
+                'https://nikitapugachev.com/wp-content/themes/np/assets/img/second-slider__img1-min.jpg',
+                'https://nikitapugachev.com/wp-content/themes/np/assets/img/second-slider__img2-min.jpg',
+                'https://nikitapugachev.com/wp-content/themes/np/assets/img/second-slider__img3-min.jpg'
             ]
         }  
     },
