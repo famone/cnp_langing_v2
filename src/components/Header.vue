@@ -6,44 +6,36 @@
 	            	<img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/Logo.svg">
 	            </router-link>
 
-	           <!--  <div class="log-row">
-	            	<router-link to="/enter" tag="button" class="shapka-btn" v-if="!user">
-	            		Войти
-	            	</router-link>
-	            	<p class="white-txt hidden-xs" v-if="user !== null">{{ user.user_email }}</p>
-	            	<router-link to="/course" tag="button" class="shapka-btn" 
-	            	v-if="user !== null && acces">
-	            		🔥 Личный кабинет
-	            	</router-link>
-	            	<div class="no-acces" v-if="user !== null && !acces ">
-	            		<span class="mdi mdi-eye-off-outline" style="color: #f44336;"> </span> Нет подписки
-	            	</div>
-	            	<button class="shapka-btn logout" 
-	            	v-if="user !== null"
-	            	@click="logout">
-	            		Выйти
-	            	</button>
-	            </div> -->
-	            <div class="log-row" v-if="!user">
+	            <div class="log-row" v-if="user === null">
 	            	<router-link to="/enter" tag="button" class="shapka-btn">
 	            		Войти
 	            	</router-link>
 	            </div>
-	            <div class="log-row" v-else>
-	            	<p class="white-txt hidden-xs">{{ user.user_email }}</p>
 <!--  -->
-	            	<p>.</p>
-	            	<div class="no-acces" v-if="!acces">
+	            <div class="log-row" v-else-if="!acces">
+	            	<p class="white-txt hidden-xs">{{ user.user_email }}</p>
+
+	            	<div class="no-acces">
 	            		<span class="mdi mdi-eye-off-outline" style="color: #f44336;"></span> 
 	            		Нет подписки
 	            	</div>
-	            	<router-link to="/course" tag="button" class="shapka-btn" v-else>
-	            		🔥 Личный кабинет
-	            	</router-link>
-<!--  -->
 	            	<button class="shapka-btn logout"@click="logout">Выйти</button>
 	            </div>
-	            
+
+<!--  -->
+
+
+			<div class="log-row" v-else>
+	            	<p class="white-txt hidden-xs">{{ user.user_email }}</p>
+	            	<router-link to="/course" tag="button" class="shapka-btn">
+	            		🔥 Личный кабинет
+	            	</router-link>
+	            	<button class="shapka-btn logout"@click="logout">Выйти</button>
+	            </div>
+
+
+
+
             </div>
         </div>
      </div>
@@ -69,5 +61,27 @@ import {mapGetters, mapActions} from 'vuex'
   		},
 	}
 </script>
+
+
+
+
+ <!--  <div class="log-row">
+	            	<router-link to="/enter" tag="button" class="shapka-btn" v-if="!user">
+	            		Войти
+	            	</router-link>
+	            	<p class="white-txt hidden-xs" v-if="user !== null">{{ user.user_email }}</p>
+	            	<router-link to="/course" tag="button" class="shapka-btn" 
+	            	v-if="user !== null && acces">
+	            		🔥 Личный кабинет
+	            	</router-link>
+	            	<div class="no-acces" v-if="user !== null && !acces ">
+	            		<span class="mdi mdi-eye-off-outline" style="color: #f44336;"> </span> Нет подписки
+	            	</div>
+	            	<button class="shapka-btn logout" 
+	            	v-if="user !== null"
+	            	@click="logout">
+	            		Выйти
+	            	</button>
+	            </div> -->
 
 

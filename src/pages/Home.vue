@@ -76,21 +76,21 @@
         <div class="row learn__items-first wow">
             <div class="col-md-4 learn__item">
                 <div class="learn__item-icon">
-                    <img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/learn__check.svg" alt="check">
+                    <img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/learn__check.svg" alt="check">
                 </div>
                 <h3 class="learn__item-title">Выставлять свет</h3>
                 <div class="learn__item-descr">Мы разберем наиболее распространённые схемы света, рассмотрим, чем можно заменить дорогое и недоступное осветительное оборудование.</div>
             </div>
             <div class="col-md-4 learn__item">
                 <div class="learn__item-icon">
-                    <img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/learn__check.svg" alt="check">
+                    <img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/learn__check.svg" alt="check">
                 </div>
                 <h3 class="learn__item-title">Настраивать камеру <br>под кадр</h3>
                 <div class="learn__item-descr">Для разных кадров нужны разные настройки камеры, мы разберем, когда и какие настройки необходимо подбирать, в зависимости от сцены.</div>
             </div>
             <div class="col-md-4 learn__item">
                 <div class="learn__item-icon">
-                    <img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/learn__check.svg" alt="check">
+                    <img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/learn__check.svg" alt="check">
                 </div>
                 <h3 class="learn__item-title">Цветокоррекции видео</h3>
                 <div class="learn__item-descr">Ты узнаешь, на что стоит обращать внимания во время работы с цветом, научишься работать с инструментами цветокоррекции Adobe Premiere и покрасишь свой ролик.</div>
@@ -99,21 +99,21 @@
         <div class="row learn__items-second wow">
             <div class="col-md-4 learn__item">
                 <div class="learn__item-icon">
-                    <img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/learn__check.svg" alt="check">
+                    <img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/learn__check.svg" alt="check">
                 </div>
                 <h3 class="learn__item-title">Монтажным спецэффектам и трюкам</h3>
                 <div class="learn__item-descr">Половина успеха фуд-видео заключается в монтаже, ты узнаешь, как дополнять кадры интересными эффектами без применения компьютерной графики.</div>
             </div>
             <div class="col-md-4 learn__item">
                 <div class="learn__item-icon">
-                    <img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/learn__check.svg" alt="check">
+                    <img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/learn__check.svg" alt="check">
                 </div>
                 <h3 class="learn__item-title">Подбирать правильную музыку и озвучивать видео</h3>
                 <div class="learn__item-descr">Узнаешь, что нужно для озвучания ролика, где искать и как обрабатывать звук.</div>
             </div>
             <div class="col-md-4 learn__item">
                 <div class="learn__item-icon">
-                    <img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/learn__check.svg" alt="check">
+                    <img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/learn__check.svg" alt="check">
                 </div>
                 <h3 class="learn__item-title">Базовым знаниям и правилам по фуд-съемке </h3>
                 <div class="learn__item-descr">Мы разберем основные проблемы, с которыми ты можешь столкнуться на фуд-проекте, и рассмотрим их решения на примерах из коммерческих работ автора.</div>
@@ -160,7 +160,7 @@
                     <div class="step__item-descr">В курсе практические <br> видеоуроки</div>
                 </div>
                 <div class="step__item-img">
-                    <img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/step__1.svg" alt="">
+                    <img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/step__1.svg" alt="">
                 </div>
             </div>
             <div class="step__item">
@@ -170,7 +170,7 @@
                     <div class="step__item-descr">В том темпе, в котором тебе <br> удобно.</div>
                 </div>
                 <div class="step__item-img">
-                    <img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/step__2.svg" alt="">
+                    <img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/step__2.svg" alt="">
                 </div>
             </div>
             <div class="step__item">
@@ -180,7 +180,7 @@
                     <div class="step__item-descr">Закрепляешь знания и <br>исправляешь ошибки</div>
                 </div>
                 <div class="step__item-img">
-                    <img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/step__3.svg" alt="">
+                    <img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/step__3.svg" alt="">
                 </div>
             </div>
             <div class="step__item">
@@ -190,7 +190,7 @@
                     <div class="step__item-descr">Для поиска новых проектов <br> и интересных клиетов</div>
                 </div>
                 <div class="step__item-img">
-                    <img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/step__4.svg" alt="">
+                    <img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/step__4.svg" alt="">
                 </div>
             </div>
         </div>
@@ -212,7 +212,7 @@
         		@click="changeAccordion(index)">
                     <div class="accordion__header">
                         <h3 class="accordion__header-title">{{item.title}}</h3>
-                        <div class="accordion__header-icon"><img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/plus.svg" alt="plus"></div>
+                        <div class="accordion__header-icon"><img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/plus.svg" alt="plus"></div>
                     </div>
                     <div class="accordion__body">
                         <p class="accordion__body-text">{{item.descr}}</p>
@@ -236,7 +236,7 @@
         		@click="changeAccordion2(index)">
                     <div class="accordion__header">
                         <h3 class="accordion__header-title">{{item.title}}</h3>
-                        <div class="accordion__header-icon"><img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/plus.svg" alt="plus"></div>
+                        <div class="accordion__header-icon"><img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/plus.svg" alt="plus"></div>
                     </div>
                     <div class="accordion__body">
                         <p class="accordion__body-text">{{item.descr}}</p>
@@ -262,7 +262,7 @@
         		@click="changeAccordion3(index)">
                     <div class="accordion__header">
                         <h3 class="accordion__header-title">{{item.title}}</h3>
-                        <div class="accordion__header-icon"><img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/plus.svg" alt="plus"></div>
+                        <div class="accordion__header-icon"><img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/plus.svg" alt="plus"></div>
                     </div>
                     <div class="accordion__body">
                         <p class="accordion__body-text">{{item.descr}}</p>
