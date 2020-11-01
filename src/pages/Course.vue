@@ -6,18 +6,22 @@
 				<iframe :src="getVideoLink" width="100%" webkitallowfullscreen frameborder="0" allow="autoplay; fullscreen" allowfullscreen="allowfullscreen" id="videplayer"></iframe>
 			</div>
 			<div class="col-lg-4 col-md-4">
-				<h3>Бюджетная фуд-съемка для начинающих</h3>
+				<div class="under-scroll">
+					<h3>Бюджетная фуд-съемка для начинающих</h3>
 				<div class="learn__item-descr">12 Уроков • 1 час 48 мин</div>
-				<div class="lesson-btn" 
-				v-for="(lesson, index) in lessons" 
-				:key="index"
-				:class="{actLesson: lesson.active}"
-				@click="changeLesson(index)"> 
-					<div class="lesson-title">
-						<p v-if="lesson.name.length > 33">{{index + 1}}.  {{lesson.name.substring(0,33)+"..."}}</p>
-						<p v-else>{{index + 1}}.  {{lesson.name}}</p>
+				</div>
+				<div class="scroll-row">
+					<div class="lesson-btn" 
+					v-for="(lesson, index) in lessons" 
+					:key="index"
+					:class="{actLesson: lesson.active}"
+					@click="changeLesson(index)"> 
+						<div class="lesson-title">
+							<p v-if="lesson.name.length > 33">{{index + 1}}.  {{lesson.name.substring(0,33)+"..."}}</p>
+							<p v-else>{{index + 1}}.  {{(lesson.name)}}</p>
+						</div>
+						<p>{{lesson.time}}</p>
 					</div>
-					<p>{{lesson.time}}</p>
 				</div>
 			</div>
 			</div>
@@ -52,7 +56,7 @@ import {mapState} from 'vuex'
 		},
 		data(){
 			return{
-				activeLink: '459870455',
+				activeLink: '474126326',
 			}
 		}
 	}
@@ -70,6 +74,9 @@ import {mapState} from 'vuex'
 }
 .learn__item-descr{
 	margin: 10px 0;
+}
+.under-scroll{
+	padding-left: 22px;
 }
 .lesson-btn{
 	display: flex;
@@ -102,6 +109,43 @@ import {mapState} from 'vuex'
 }
 .wide-container {
     max-width: 1410px;
+}
+
+.scroll-row{
+	overflow-y: scroll;
+	height: 400px;
+	padding-right: 10px;
+}
+
+
+
+
+
+
+
+.scroll-row::-webkit-scrollbar {
+	width: 3px;
+	margin-left: 15px;
+	border-radius: 5px;
+	border:none;
+}
+
+/* Track */
+.scroll-row::-webkit-scrollbar-track {
+	background: #1A1A1A;
+	border-radius: 3px;
+}
+
+/* Handle */
+.scroll-row::-webkit-scrollbar-thumb {
+	background: #2E97E6;
+	border-radius: 3px;
+}
+
+/* Handle on hover */
+.scroll-row::-webkit-scrollbar-thumb:hover {
+	background: #1A1A1A;
+	border-radius: 3px;
 }
 
 

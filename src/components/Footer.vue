@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-  <div class="container-fluid wow">
+  <div class="container-fluid">
     <div class="footer-box">
       <div class="footer__copyright">
         Copyright 2008 - 2020 CNP
