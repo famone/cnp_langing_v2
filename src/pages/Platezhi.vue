@@ -13,12 +13,7 @@
             <div class="benefit__item-descr">При оплате заказа банковской картой возврат денежных средств производится на ту карту, с которой был произведен платеж.</div>
 		</div>
 
-		 <video ref="videoPlayer" class="video-js vjs-default-skin"
-     controls
-    preload="auto"
-    data-setup='{}'>
-      <source src="https://nikitapugachev.com/wp-content/uploads/video/9.%20Heineken%20-%20%d0%b2%d1%8b%d0%bb%d0%b5%d1%82%d0%b0%d1%8e%d1%89%d0%b0%d1%8f%20%d0%bf%d1%80%d0%be%d0%b1%d0%ba%d0%b0.mp4" type="video/mp4"></source>
-     </video>
+        <vue-core-video-player :src="source" :autoplay="false"></vue-core-video-player>
 
 
 		
@@ -30,60 +25,46 @@
 
 
 <script>
-import videojs from 'video.js';
-import videoJsResolutionSwitcher  from 'videojs-resolution-switcher'
+
+
+const videoSource = [
+            {
+    src: 'https://media.vued.vanthink.cn/sparkle_your_name_am720p.mp4',
+    resolution: 720,
+  }, {
+    src: 'https://media.vued.vanthink.cn/y2mate.com%20-%20sparkle_your_name_amv_K_7To_y9IAM_1080p.mp4',
+    resolution: 1080
+  },
+  {
+    src: 'https://media.vued.vanthink.cn/sparkle_your_name_am360p.mp4',
+    resolution: 360,
+  }, 
+];
 
 export default {
-    name: "VideoPlayer",
     props: {
         options: {
             type: Object,
             default() {
                 return {
-                      plugins: {
-                        videoJsResolutionSwitcher: {
-                          default: 'high',
-                          dynamicLabel: true
-                        }
-                      }
+                      
                 };
             }
-        }
+        },
     },
     data() {
         return {
-            player: null
+            source:videoSource,
+            
         }
     },
-    mounted() {
-        this.player = videojs(this.$refs.videoPlayer, this.options,  function onPlayerReady() {
-
-            this.player.updateSrc([
-        {
-          src: 'http://media.xiph.org/mango/tears_of_steel_1080p.webm',
-          type: 'video/webm',
-          label: '360'
-        },
-        {
-          src: 'http://mirrorblender.top-ix.org/movies/sintel-1024-surround.mp4',
-          type: 'video/mp4',
-          label: '720'
-        }
-      ])
-
-      this.player.on('resolutionchange', function(){
-        console.info('Source changed to %s', player.src())
-      })
-
-
-            console.log('onPlayerReady', this);
-        })
+    mounted() {      
     },
     beforeDestroy() {
         if (this.player) {
             this.player.dispose()
         }
-    }
+  }
 }
 </script>
 

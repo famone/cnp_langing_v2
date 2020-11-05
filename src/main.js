@@ -7,6 +7,43 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import VueTheMask from 'vue-the-mask'
 import Vuelidate from 'vuelidate'
 import 'vuetify/dist/vuetify.min.css'
+
+
+import VueCoreVideoPlayer from 'vue-core-video-player'
+
+const ru = {
+  "dashboard" : {
+    "btn": {
+      "play" : "Плей",
+      "pause": "Пауза",
+      "fullscreen": "Полный экран",
+      "exitFullscreen": "Выйти из полноэкранного режима",
+    },
+    "settings" : {
+      "autoplay": "Autoplay",
+      "loop": "Loop",
+      "speed": "Speed",
+      "resolution": "Качество"
+    }
+  },
+  "layers": {
+    "error": {
+      "title": "(O_O)?  Ошибка!",
+      "2404": "Видеофайл не найден",
+      "2502": "Media Network Error",
+      "2503": "Video Cannot DECODE",
+      "2504": "Video Cannot Play!"
+    },
+    "loading": {
+      "msg": "Загрузка ..."
+    }
+}}
+
+
+Vue.use(VueCoreVideoPlayer,
+  {
+  lang: en
+});
 // import Vuetify from 'vuetify'
  
 
@@ -26,6 +63,7 @@ Vue.use(VueRouter)
 Vue.use(Vuelidate)
 Vue.use(require('vue-cookies'))
 Vue.use(VueAwesomeSwiper)
+
 
 
 new Vue({
